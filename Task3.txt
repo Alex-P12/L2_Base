@@ -1,0 +1,32 @@
+function whatCentury(year) //Задание 3
+{//Вычисление века из года
+  let century = Math.ceil(Number(year) / 100);
+  
+  if (century % 100 >= 11 && century % 100 <= 13)
+  {
+    return century + "th";
+  }
+  else if (century % 10 == 1)
+  {
+    return century + "st";
+  }
+  else if (century % 10 === 2)
+  {
+    return century + "nd";
+  }
+  else if (century % 10 === 3)
+  {
+    return century + "rd";
+  }
+  else
+  {
+    return century + "th";
+  }
+}
+
+console.log("1999 - " + whatCentury(1999));
+console.log("2000 - " + whatCentury(2000));
+console.log("2154 - " + whatCentury(2154));
+console.log("2259 - " + whatCentury(2259));
+console.log("1124 - " + whatCentury(1124));
+console.log("2000 - " + whatCentury(2000));
