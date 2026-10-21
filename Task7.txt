@@ -1,0 +1,30 @@
+function wave(str) //Задание 7
+{//Функция преобразования регистров букв
+  let arr = [];
+  
+  for (let j = 0; j < str.length; j++)
+  {
+    if (str[j] != " ")
+    {
+      let line = "";
+      
+      for (let e = 0; e < str.length; e++)
+      {
+        if (e == j)
+        {
+          line += str[e].toUpperCase();
+        }
+        else
+        {
+          line += str[e];
+        }
+      }
+      
+      arr.push(line);
+    }
+  }
+  
+  return arr;
+}
+
+console.log(wave("hello world"));
