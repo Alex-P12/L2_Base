@@ -1,0 +1,33 @@
+function hasTwoCubeSums(n) //Задание 1
+{//Функция проверки числа на сумму двух кубов
+	for (let a = 1; a ** 3 <= n; a++)
+  {
+    for (let b = a + 1; a ** 3 + b ** 3 <= n; b++)
+    {
+      if (a ** 3 + b ** 3 == n)
+      {
+          continue;
+      }
+      
+      for (let c = 1; c ** 3 <= n; c++)
+      {
+        for (let d = c + 1; c ** 3 + d ** 3 <= n; d++)
+        {
+          if (
+                c ** 3 + d ** 3 == n &&
+                a != c && a != d &&
+                b != c && b != d
+             )
+          {
+            return true;
+          }
+        }
+      }
+    }
+  }
+  
+  return false;
+}
+
+console.log(hasTwoCubeSums(1729));
+console.log(hasTwoCubeSums(42));
