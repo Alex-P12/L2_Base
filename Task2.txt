@@ -1,0 +1,18 @@
+function ipv4Parser(ip, mask) //Задание 2
+{//Функция находящая сетевой блок и идентификатор хоста
+  let IP = ip.split(".");
+  let Mask = mask.split(".");
+  
+  let network = [];
+  let host = [];
+  
+  for (let j = 0; j < 4; j++)
+  {
+    network[j] = Number(IP[j] & Mask[j]);
+    host[j] = Number(IP[j] & (~Mask[j] & 255));
+  }
+  
+  return [network.join("."), host.join(".")];
+}
+
+console.log(ipv4Parser("192.168.2.1", "255.255.255.0"));
