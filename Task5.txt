@@ -1,0 +1,36 @@
+function primeFactors(n) //Задание 5
+{//Функция разложения числа на множители
+    let result = "";
+
+    for (let p = 2; p * p <= n; p++)
+    {
+      if (n % p == 0)
+      {
+        let count = 0;
+        
+        while (n % p == 0)
+        {
+          n /= p;
+          count++;
+        }
+
+        if (count == 1)
+        {
+          result += "(" + p + ")";
+        }
+        else
+        {
+          result += "(" + p + "**" + count + ")";
+        }
+      }
+    }
+  
+    if (n > 1)
+    {
+      result += "(" + n + ")";
+    }
+
+    return result;
+}
+
+console.log(primeFactors(86240));
