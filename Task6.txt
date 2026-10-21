@@ -1,0 +1,31 @@
+function toWeirdCase(string) //Задание 6
+{//Функция преобразование регистра букв слова
+  let result = "";
+  let count = 0;
+  
+  for (let j = 0; j < string.length; j++)
+  {
+    if (string[j] == " ")
+    {
+      result += " ";
+      count = 0;
+    }
+    else
+    {
+      if (count % 2 == 0)
+      {
+        result += string[j].toUpperCase()
+      }
+      else
+      {
+        result += string[j].toLowerCase();
+      }
+      
+      count++;
+    }
+  }
+  
+  return result;
+}
+
+console.log(toWeirdCase("template text"));
